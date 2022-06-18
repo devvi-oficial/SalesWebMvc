@@ -42,7 +42,7 @@ namespace SalesWebMvc
             //Register SeedingService
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
-            services.AddScoped<DepartmentService>();
+            services.AddScoped<DepartmentServices>();
 
             //Provider SQL
             //services.AddDbContext<SalesWebMvcContext>(options =>

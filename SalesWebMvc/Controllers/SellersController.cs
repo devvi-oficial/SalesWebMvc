@@ -13,11 +13,11 @@ namespace SalesWebMvc.Controllers
     {
 
         private readonly SellerService _sellerService;
-        private readonly DepartmentService _departmentsService;
-        public SellersController(SellerService sellerService, DepartmentService departmentService)
+        private readonly DepartmentServices _departmentServices;
+        public SellersController(SellerService sellerService, DepartmentServices departmentServices)
         {
             _sellerService = sellerService;
-            _departmentsService = departmentService;
+            _departmentServices = departmentServices;
         }
         public IActionResult Index()
         {
@@ -25,19 +25,16 @@ namespace SalesWebMvc.Controllers
             return View(list);
         }
 
-        //public IActionResult Create()
-        //{
-        //    var departments = _departmentsService.FindAll();
-        //    var viewModel = new SellerFormViewModel { Departments = departments };
-        //    return View(viewModel);
-        //}
 
-    
         public IActionResult Create()
         {
-
-            return View();
+            var department = _departmentServices.FindAll();
+            var viewModel = new SellerFormViewModels { Departments = department};
+            return View(viewModel);
         }
+
+
+
 
         //Anotatition
         [HttpPost]
