@@ -46,7 +46,7 @@ namespace SalesWebMvc
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
             services.AddScoped<DepartmentServices>();
-
+            services.AddScoped<SalesRecordServices>();
             //Provider SQL
             //services.AddDbContext<SalesWebMvcContext>(options =>
             //        options.UseSqlServer(Configuration.GetConnectionString("SalesWebMvcContext")));
